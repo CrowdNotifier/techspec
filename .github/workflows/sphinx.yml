@@ -1,0 +1,33 @@
+name: compile-sphinx
+
+on:
+  pull_request:
+    branches:
+      - main
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@master
+        with:
+          fetch-depth: 1
+
+      - name: Set up Python 3.x
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.x'
+
+      - name: setup venv
+        run: make venv
+
+      - name: Run Makefile
+        run: make singlehtml
+      
+      - uses: actions/upload-artifact@v2
+        with:
+          name: htmldoc
+          path: build/singlehtml

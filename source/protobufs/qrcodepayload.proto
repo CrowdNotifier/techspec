@@ -1,0 +1,30 @@
+syntax = "proto3";
+
+message QRCodePayload {
+  uint32 version = 1;
+  TraceLocation locationData = 2;
+  CrowdNotifierData crowdNotifierData = 3;
+
+  // Country-specific location information
+  bytes countryData = 4;
+}
+
+message TraceLocation {
+  uint32 version = 1;
+  // max. 100 characters
+  string description = 2;
+  // max. 100 characters
+  string address = 3;
+
+  // UNIX timestamp (in seconds since Unix Epoch)
+  uint64 startTimestamp = 5;
+  // UNIX timestamp (in seconds since Unix Epoch)
+  uint64 endTimestamp = 6;
+}
+
+message CrowdNotifierData {
+  uint32 version = 1;
+  bytes publicKey = 2;
+  bytes cryptographicSeed = 3;
+  uint32 type = 4; // exact semantic tbd
+}

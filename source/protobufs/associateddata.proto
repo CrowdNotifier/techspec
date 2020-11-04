@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+message AssociatedData {
+  int32 version = 1;
+  string message = 2;
+
+  // UNIX timestamp (in seconds since Unix Epoch)
+  int64 startTimestamp = 3;
+  // UNIX timestamp (in seconds since Unix Epoch)
+  int64 endTimestamp = 4;
+
+  bytes countryData = 5;
+}

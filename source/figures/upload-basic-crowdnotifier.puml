@@ -1,0 +1,37 @@
+@startuml
+actor "Contact Tracer" as CT
+participant "Health Authority\nBackend" as HAB
+actor "Location Owner" as LO
+participant "Location Owner\nDevice" as LOD
+
+group Step A. Upload Request
+CT -> HAB : Set up upload
+CT -> LO : Request upload + provide authorization
+CT -> HAB : Notification message m
+end
+
+group Step B. Location Owner Upload
+LO  -> LOD : Scan QRtrace
+LO  -> LOD : Provide upload authorization
+LOD -> HAB : Authorize upload & request times
+HAB -> LOD : Notification time window (entry', exit')
+LOD -> LOD : Compute pre-tracing\nkeys (ptrids)
+LOD -> HAB : Upload pre-tracing data (payload, ctxtHA, ptrids)
+end
+
+group Step C. Health Authority Process Upload
+HAB -> HAB : Compute full tracing keys
+HAB -> HAB : Check tracing keys
+end
+
+group Step D. Upload Validation
+HAB -> CT : Description of uploaded location
+CT -> HAB : Approve notification
+end
+
+group Step E. Publication of Tracing Keys
+HAB -> HAB : Encrypt notification data
+HAB -> : Publish tracing record
+end
+
+@enduml

@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+message ProblematicEventWrapper {
+  int32 version = 1;
+  repeated ProblematicEvent events = 2;
+}
+message ProblematicEvent {
+  int32 version = 1;
+  bytes identity = 2;
+  bytes secretKeyForIdentity = 3;
+
+  // UNIX timestamp corresponding to day start (in seconds since Unix Epoch)
+  int64 day = 4;
+
+  bytes encryptedAssociatedData = 5;
+  bytes cipherTextNonce = 6;
+}
