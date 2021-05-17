@@ -232,10 +232,9 @@ def macros_to_mathjax(latex_macros):
 
     return macros
 
-mathjax_config = {
-    'showProcessingMessages': 'true',
-    'TeX': {
-        'Macros': macros_to_mathjax(all_macros)
+mathjax3_config = {
+    'tex': {
+        'macros': macros_to_mathjax(all_macros)
     },
 }
 
