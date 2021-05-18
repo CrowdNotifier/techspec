@@ -38,9 +38,9 @@ We construct these using X25519 for key-exchange and XSalsa20-Poly1305 for the s
 
 As implementation, we use the following algorithms from `libsodium <https://libsodium.gitbook.io/doc/>`_:
 
-  * :math:`\keygen`: `crypto_box_keypair <https://libsodium.gitbook.io/doc/public-key_cryptography/authenticated_encryption#key-pair-generation>`_
-  * :math:`\enc`: `crypto_box_seal <https://libsodium.gitbook.io/doc/public-key_cryptography/sealed_boxes#usage>`_
-  * :math:`\dec`: `crypto_box_seal_open <https://libsodium.gitbook.io/doc/public-key_cryptography/sealed_boxes#usage>`_
+* :math:`\keygen`: `crypto_box_keypair <https://libsodium.gitbook.io/doc/public-key_cryptography/authenticated_encryption#key-pair-generation>`_
+* :math:`\enc`: `crypto_box_seal <https://libsodium.gitbook.io/doc/public-key_cryptography/sealed_boxes#usage>`_
+* :math:`\dec`: `crypto_box_seal_open <https://libsodium.gitbook.io/doc/public-key_cryptography/sealed_boxes#usage>`_
 
 .. _ibe-intro:
 
