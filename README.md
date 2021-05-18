@@ -5,7 +5,7 @@
 
 This repository holds the source files for the technical specification of CrowdNotifier. This specification is technical. We refer to the [CrowdNotifier Documents repository](https://github.com/CrowdNotifier/Documents/) for a more gentle introduction.
 
-A live version of this documentation is available at: [https://crowdnotifierspec.readthedocs.io](https://crowdnotifierspec.readthedocs.io).
+A live version of this documentation is available at: [https://crowdnotifier.readthedocs.io](https://crowdnotifier.readthedocs.io).
 
 We welcome feedback on the specification contained in this repository. We of course 
 also welcome feedback on the high-level CrowdNotifier designs and a discussion of their security and privacy properties. However,
