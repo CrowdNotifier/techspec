@@ -168,7 +168,7 @@ The app and server proceed as follows:
       (\id, \skid)`.
 
    3. The server now proceeds as in :ref:`basic
-      CrowdNotifier<basic-initiate-tracing>` steps 4, 5, and 6 to compute tuples
+      CrowdNotifier<basic-initiate-tracing>` step E to compute tuples
       :math:`(\traceid, \dayctr, \ctxtnotificationdata)` where it instead uses the
       notification key :math:`\notificationkey` provided by the client rather
       than recomputing it from scratch.
